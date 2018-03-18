@@ -11,11 +11,17 @@ ivanov2103 Infra repository
 **$ cat ../.ssh/config**
 
 _Host bastion
+
  HostName 35.205.23.100
+
  User appuser
+
 Host someinternalhost
+
  HostName 10.132.0.3
+
  User appuser
+
  ProxyCommand ssh -A bastion -W %h:%p_
 
 - GCP hosts IP:
