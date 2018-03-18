@@ -5,9 +5,12 @@
 
 ## В процессе сделано:
  - Created bastion host with hostname _"bastion"_ and local host with hostname _"someinternalhost"_:
+
 bastion_IP = 35.205.23.100
+
 someinternalhost_IP = 10.132.0.3
- - Was configured access via SSH to this hosts, was configured jump to _someinternalhost_ by alias.
+
+- Was configured access via SSH to this hosts, was configured jump to _someinternalhost_ by alias.
  - Was configured VPN server on bastion host, was created VPN tunnel between my PC and _bastion_.
 
 ## Как запустить проект:
