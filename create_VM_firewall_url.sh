@@ -16,3 +16,4 @@ gcloud compute firewall-rules create default-puma-server \
     --source-ranges 0.0.0.0/0 \
     --priority 1000 \
     --target-tags puma-server
+    
