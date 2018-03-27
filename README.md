@@ -47,9 +47,9 @@ someinternalhost_IP = 10.132.0.3
 
 - For install Ruby, Mongodb and deploy application, run commands:
 
-**scp ~/ivanov2103_infra/deploy.sh ~/ivanov2103_infra/install_mongodb.sh ~/ivanov2103_infra/install_ruby.sh appuser@35.189.239.164:~/**
+scp ~/ivanov2103_infra/deploy.sh ~/ivanov2103_infra/install_mongodb.sh ~/ivanov2103_infra/install_ruby.sh appuser@35.189.239.164:~/
 
-**ssh appuser@35.189.239.164 './install_ruby.sh ; ./install_mongodb.sh ; ./deploy.sh'**
+ssh appuser@35.189.239.164 './install_ruby.sh ; ./install_mongodb.sh ; ./deploy.sh'
 
 - For create VM and firewall-rules with a startup script local file, run command:
 
