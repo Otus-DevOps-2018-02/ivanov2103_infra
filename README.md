@@ -33,25 +33,25 @@ someinternalhost_IP = 10.132.0.3
     --rules tcp:9292 \
     --source-ranges 0.0.0.0/0 \
     --priority 1000 \
-    --target-tags puma-server**
+    --target-tags puma-server
     
 - For create VM and firewall-rules run command:
 
-**./create_VM_firewall.sh**
+**./create_VM_firewall.sh
 
 - For install Ruby, Mongodb and deploy application, run commands:
 
-**scp ~/ivanov2103_infra/deploy.sh ~/ivanov2103_infra/install_* appuser@35.189.239.164:~/**
+**scp ~/ivanov2103_infra/deploy.sh ~/ivanov2103_infra/install_* appuser@35.189.239.164:~/
 
-**ssh appuser@35.189.239.164 './install_ruby.sh ; ./install_mongodb.sh ; ./deploy.sh'**
+**ssh appuser@35.189.239.164 './install_ruby.sh ; ./install_mongodb.sh ; ./deploy.sh'
 
 - For create VM and firewall-rules with a startup script local file, run command:
 
-**./create_VM_firewall_file.sh**
+**./create_VM_firewall_file.sh
 
 - For create VM and firewall-rules with a startup script stored on Google Cloud Storage, run command:
 
-**./create_VM_firewall_url.sh**
+**./create_VM_firewall_url.sh
 
 - Test hosts IP:Port:
 
