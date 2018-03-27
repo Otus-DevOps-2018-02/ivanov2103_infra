@@ -47,7 +47,7 @@ someinternalhost_IP = 10.132.0.3
 
 - For install Ruby, Mongodb and deploy application, run commands:
 
-**scp ~/ivanov2103_infra/deploy.sh ~/ivanov2103_infra/install_* appuser@35.189.239.164:~/ **
+**scp ~/ivanov2103_infra/deploy.sh ~/ivanov2103_infra/install_\* appuser@35.189.239.164:~/**
 
 **ssh appuser@35.189.239.164 './install_ruby.sh ; ./install_mongodb.sh ; ./deploy.sh'**
 
