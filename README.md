@@ -19,18 +19,18 @@ someinternalhost_IP = 10.132.0.3
 
 ## Homework-05
 - command for create firewall-rules:  
-**gcloud compute firewall-rules create default-puma-server \
-    --network default \
-    --action allow \
-    --direction ingress \
-    --rules tcp:9292 \
-    --source-ranges 0.0.0.0/0 \
-    --priority 1000 \
+**gcloud compute firewall-rules create default-puma-server \\  
+    --network default \\  
+    --action allow \\  
+    --direction ingress \\  
+    --rules tcp:9292 \\  
+    --source-ranges 0.0.0.0/0 \\  
+    --priority 1000 \\  
     --target-tags puma-server**
 - For create VM and firewall-rules run command:  
 **./create_VM_firewall.sh**
 - For install Ruby, Mongodb and deploy application, run commands:  
-**scp ~/ivanov2103_infra/deploy.sh ~/ivanov2103_infra/install_mongodb.sh ~/ivanov2103_infra/install_ruby.sh appuser@35.195.95.117:~/**  
+**scp ~/ivanov2103_infra/deploy.sh ~/ivanov2103_infra/install_mongodb.sh ~/ivanov2103_infra/install_ruby.sh appuser@35.195.95.117:\~/**  
 **ssh appuser@35.195.95.117 './install_ruby.sh ; ./install_mongodb.sh ; ./deploy.sh'**
 - For create VM and firewall-rules with a startup script local file, run command:  
 **./create_VM_firewall_file.sh**
