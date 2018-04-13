@@ -50,3 +50,17 @@ testapp_port = 9292
 - Test hosts IP:Port:  
 testapp_IP = 35.195.95.117  
 testapp_port = 9292  
+
+## Homework-07
+- For create two GCP instances with Ruby, MongoDB and deployed Reddit application, run command: **terraform.exe apply**. The load balancer is also created.  
+### **\***  
+1. Arguments for add more keys to the metadata resource (google_compute_project_metadata_item):  
+_key   = "ssh-keys"  
+value = "appuser:${file(var.public_key_path)} appuser1:${file(var.public_key_path)} appuser2:${file(var.public_key_path)}"_  
+2. Key "appuser_web" was deleted after executing **terraform apply** because there was no configuration for this resource.  
+### **\*\***
+1. For creating load balancing  instance, resources was defined from documentation (https://cloud.google.com/compute/docs/load-balancing/http/). Resource configuration based on  "gce-lb-http" module parts (https://registry.terraform.io/modules/GoogleCloudPlatform/lb-http/google/1.0.5).   
+2. We are use argument "count" for deploy more than one identical instance.  
+- Test hosts IP:Port (load balancer):  
+testapp_IP = 35.190.2.190  
+testapp_port = 80  
