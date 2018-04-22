@@ -14,7 +14,7 @@ variable app_disk_image {
 
 variable db_ip {
   description = "DB instance IP"
-  default = ""
+  default     = ""
 }
 
 variable private_key_path {

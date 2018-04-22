@@ -1,0 +1,6 @@
+project = "my id"
+region = "europe-west1"
+public_key_path = "~/.ssh/appuser.pub"
+private_key_path = "~/.ssh/appuser"
+zone = "europe-west1-b"
+s_ranges = "my IP"

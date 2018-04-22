@@ -2,7 +2,7 @@ resource "google_compute_instance" "app" {
   name         = "reddit-app"
   machine_type = "g1-small"
   zone         = "${var.zone}"
-  tags = ["reddit-app"]
+  tags         = ["reddit-app"]
 
   boot_disk {
     initialize_params {
@@ -37,7 +37,7 @@ resource "google_compute_instance" "app" {
   provisioner "remote-exec" {
     inline = ["echo export DATABASE_URL=${var.db_ip}:27017 >> ~/.profile"]
   }
-  
+
   provisioner "remote-exec" {
     script = "../modules/app/deploy.sh"
   }
