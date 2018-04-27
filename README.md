@@ -77,3 +77,8 @@ _$ cat ../../packer/scripts/install_mongodb.sh
 apt install -y mongodb-org  
 **sed -i 's/.\*bindIp:.\*/  bindIp: 0.0.0.0/' /etc/mongod.conf**  
 systemctl enable mongod_  
+
+## Homework-09
+- Was created configution file, inventory with hostgroups in .ini and .yaml format, studed some modules (ping, command, shell, systemd, service, git). Was implemented simple playbook for install Reddit application.  
+### **\***
+Was created inventory in .json format by task recuirements. Was implemented simple script accepting only _--list_ parameter for reading JSON inventory. The _--host_ parameter don't was implement because JSON inventory has _\_meta_ element with variables.  
