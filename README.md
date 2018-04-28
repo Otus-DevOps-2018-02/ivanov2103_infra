@@ -64,3 +64,16 @@ value = "appuser:${file(var.public_key_path)} appuser1:${file(var.public_key_pat
 - Test hosts IP:Port (load balancer):  
 testapp_IP = 35.190.2.190  
 testapp_port = 80  
+
+## Homework-08
+- Was imported SSH firewall rule resource, has been studied dependence of resources by example of App IP resource creation. The configuration was divided to App and DB modules. Were created: configurations for two infrastructure environments, storage buckets resources from "storage-bucket" registry module.  
+### **\***  
+Was created remote backend on GCP storage for state file. It was done for App and DB environments. Was verified blocking the state file with simultaneous access (_Error: Error locking state: Error acquiring the state lock: writing "gs://storage-bucket-prod/terraform/state/default.tflock" failed: googleapi: Error 412: Precondition Failed, conditionNotMet_).  
+### **\*\***
+Were added App module provisioners for deploying Reddit. For access to Mongodb was needed change the configuration of Mongodb and recreated the image of the DB instance:  
+_$ cat ../../packer/scripts/install_mongodb.sh  
+\#!/bin/bash  
+...  
+apt install -y mongodb-org  
+**sed -i 's/.\*bindIp:.\*/  bindIp: 0.0.0.0/' /etc/mongod.conf**  
+systemctl enable mongod_  
