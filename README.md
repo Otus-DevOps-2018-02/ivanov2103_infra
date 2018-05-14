@@ -81,4 +81,8 @@ systemctl enable mongod_
 ## Homework-09
 - Was created configution file, inventory with hostgroups in .ini and .yaml format, studed some modules (ping, command, shell, systemd, service, git). Was implemented simple playbook for install Reddit application.  
 ### **\***
-Was created inventory in .json format by task recuirements. Was implemented simple script accepting only _--list_ parameter for reading JSON inventory. The _--host_ parameter don't was implement because JSON inventory has _\_meta_ element with variables.  
+Was created inventory in .json format by task recuirements. Was implemented simple script accepting only _--list_ parameter for reading JSON inventory. The _--host_ parameter doesn't was implement because JSON inventory has _\_meta_ element with variables.  
+## Homework-10
+- Was studied handlers and templates for configuration and deploying. Were studied different approaches to infrastructure management: one playbook - one play, one playbook - many plays, many playbooks. Was replaced bash scenaries to ansible playboks in packer provisioners and re-created GCE instance images.  
+### **\***
+Was created dynamic inventory by gce.py script, file secrets.py with defined parameters  was putted in $PYTHONPATH directory (/usr/lib/python2.7/), file gce.ini with undefined parameters values was putted in ansible work directory. In user ~/.profile was determined environment variable $GCE_INI_PATH with path to gce.ini. GCE service account JSON credentials was taken outside the repository. In ansible.cfg was changed local inventory to dynamic. Was created playbooks for dynamic inventory (filenames with suffix \_di), in this playbooks was changed hosts.  
