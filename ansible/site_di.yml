@@ -1,5 +1,0 @@
----
-- import_playbook: db_di.yml
-- import_playbook: app_di.yml
-- import_playbook: deploy_di.yml
-
