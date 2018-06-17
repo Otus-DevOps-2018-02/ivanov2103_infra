@@ -8,7 +8,7 @@ python:
 #    packages:
 #    - ansible
 env:
-- MYHOME=/home/travis/build/ivanov2103/trytravis
+- MYHOME=/home/travis/build/Otus-DevOps-2018-02/ivanov2103_infra
 before_install:
 - curl https://raw.githubusercontent.com/express42/otus-homeworks/2018-02/run.sh|bash
 install:
