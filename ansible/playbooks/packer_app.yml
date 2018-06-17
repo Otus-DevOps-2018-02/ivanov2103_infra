@@ -3,10 +3,14 @@
   hosts: all
   become: true
   tasks:
-  - name: Install ruby and rubygems and required packages
-    apt: "name={{ item }} state=present"
-    with_items:
-      - ruby-full
-      - ruby-bundler
-      - build-essential
+  - name: Import DB role
+    import_role:
+      name: db
+#  tasks:
+#  - name: Install ruby and rubygems and required packages
+#    apt: "name={{ item }} state=present"
+#    with_items:
+#      - ruby-full
+#      - ruby-bundler
+#      - build-essential
 

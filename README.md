@@ -101,3 +101,30 @@ Dynamic inventory from Homework-10 was configured for using in stage and prod en
 Was configured TravisCI for check syntax and configuration my packer templates, terraform files and ansible files. Created a github separate repository for test TravisCI checks by trytravis util.  
 **Build status badge in title README.md.**  
 
+## Homework-12  
+- Local infrastructure was deployed with use Vagrant.  
+Phyton installing moved to dedicated playbook, added tasks for installing and configuration Mongo DB, installing Ruby and configuration Puma.  
+Added parameter for deploy user and changed templates and tasks for use it as variable.  
+I use WSL and needed in some additional tuning: added environment variable (https://www.vagrantup.com/docs/other/wsl.html) and changed Vagrantfile - turning off the serial port (https://github.com/joelhandwell/ubuntu_vagrant_boxes/issues/1).  
+### **\***  
+Wariable nginx_sites format was difined by example from https://www.vagrantup.com/docs/provisioning/ansible_common.html and ansible app task message below from playing on GCP stage environment (deleted after checking).  
+\- name: Show nginx_sites variable value  
+  debug:  
+    msg: "{{ nginx_sites }}"  
+- Were installed Molecule, Ansible, Testinfra in python *virtualenv* environment. Changed testinfra version in requirements.txt because received an error:  
+*"molecule 2.14.0 has requirement testinfra==1.12.0, but you'll have testinfra 1.14.0 which is incompatible."*   
+Were created and running some tests by Testinfra modules for check: MongoDB is enabled and running, has valid bindIp in config and listening TCP port 27017.  
+Packer templates was changed for use role.  
+For my WSL environment i needed configure Virtualbox provider across provider_raw_config_args variable in molecule.yml:  
+platforms:  
+  \- name: instance  
+    provider_raw_config_args:  
+      \- "customize [ 'modifyvm', :id, '--uartmode1', 'disconnected' ]"  
+### **\*\***
+Moved DB role to other git repository and plugged it to "infra" repository. Checked this by creating terraform stage envinroment and playing site.yml - was succesful.  
+Added checking my DB role to TravisCI (used example):https://github.com/ivanov2103/ansible_role_dbserver - build status badge in title README.md.  
+Added build notification to my Slack channel \#igor_ivanov.  
+In integration process I had some errors:  
+*"GoogleAuthError('PyCrypto library required for '\nlibcloud.common.google.GoogleAuthError: 'PyCrypto library required for Service Account Authentication.'\n"}*  
+*ERROR: Ansible version '2.3.0.0' not supported.  Molecule only supports Ansible versions '>=2.5' with Python version '(3, 6)'*  
+For correcting this errors was changed install instruction in .travis.yml: "- **travis_wait** pip install **ansible>=2.5** molecule apache-libcloud **pycrypto**"  
