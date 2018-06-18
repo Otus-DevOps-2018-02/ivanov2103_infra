@@ -1,2 +1,1 @@
-mongo_bind_ip: 0.0.0.0
-
+environments/stage/group_vars/tag_reddit-db

@@ -14,7 +14,7 @@
     "zone": "europe-west1-b",
     "ssh_username": "appuser",
     "ssh_port": "22",
-    "ssh_timeout": "35s",
+    "ssh_timeout": "120s",
     "machine_type": "{{user `machine_type`}}",
     "image_description": "image for reddit site",
     "disk_size": "10",
@@ -26,7 +26,9 @@
   "provisioners": [
     {
     "type": "ansible",
-    "playbook_file": "ansible/playbooks/packer_db.yml"
+    "playbook_file": "ansible/playbooks/packer_db.yml",
+    "extra_arguments": ["--tags","install"],
+    "ansible_env_vars": ["ANSIBLE_ROLES_PATH={{ pwd }}/ansible/roles"]
     }
   ]
 }
